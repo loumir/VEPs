@@ -1,30 +1,21 @@
 Vocabulary: http://www.ivoa.net/rdf/product-type
-Author: Mireille Louys for HEIG IG <mireille.louys@unistra.fr>
-Date: 2025-04-24
+Author: baptiste.cecconi@obspm.fr
+Date: 2025-10-30
 
-New Term: event-bundle
-Action: Addition 
-Label: Event list  with associated calibration files
-Description:  A data product type that agregates an event-list data product
-to other files that describe instrumental response functions for calibration and analysis. 
-This is can be implemented as an archive file or other compressed formats.
-Relationships: is related to the event-list data product type 
-
-Used-in: The distribution of event-list data in multi-messenger astronomy. 
-For example, Chandra primary products distributed via the Chandra
-Data Archive include around half a dozen different types of products neces-
-sary to analyse Chandra data (for example, L2 event-list, Aspect solution,
-bad pixel map, spacecraft ephemeris, V&V Report).
-For VHE gamma rays and neutrinos, the DL3 event-lists should manda-
-torily be associated to their associated IRFs files. The links between the
-event-list and these IRFs should be well defined in the event-bundle.
+Term: hyper-dynamic-spectrum
+Action: Addition
+Label: Hyper Dynamic Spectrum
+Description: A three-dimensional dataset extending a dynamic spectrum (a time axis and a spectral axis) 
+with a third relative temporal axis (usually a higher resolution time-series).
+Relationships: narrower than #dynamic-spectrum, narrower than #cube
+Used-in: ivoa.obscore table at http://vogate.obs-nancay.fr/tap
+Used-in: https://archives.esac.esa.int/psa/ftp/MARS-EXPRESS/MARSIS/MEX-M-MARSIS-3-RDR-AIS-EXT8-V1.0/
 
 Rationale:
-Event-list data products distributed by High Energy surveys 
-need additionnal information to be calibrated and analysed. 
-Instrumental and observations functions must be available together 
-with the data in order to interpret the event-list content. 
 
-Reference:
-- IVOA Note Virtual Observatory and High Energy Astrophysics Version 1.0
-https://ivoa.net/documents/Notes/VOHE/20241112/VOHE-Note-draft_1.0.pdf
+The new term is porposed by the Nancay and Orleans pulsar team to describe the pulsar basic datasets.
+They are composed of 2 dimensional arrays of relative time-series. The main axes are the time (either
+absolute times or periodic time) and a spectral axis. Each temporal and spectral sample is a 
+time-series. The same type of data layout exists for radar planetary radars, where each time and 
+frequency point is a time-series of the observed pulse echo. The Mars-Express/MARSIS/AIS dataset is 
+an example of such product type (although is it nos -yet- available in an obscore table).

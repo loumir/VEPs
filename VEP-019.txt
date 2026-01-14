@@ -1,0 +1,24 @@
+Vocabulary: http://www.ivoa.net/rdf/ivoasem
+Author: elsa.david@obspm.fr
+Date: 2025-11-20
+
+Term: ucd-syntax-code
+Action: Addition
+Label: has UCD syntax code
+Description: UCD atoms canot be freely combined.  Rather, each atom has
+	a syntax code, which is one of p (only primary position), s (not in
+	primary position), q (freely positionable), e (can be followed by a
+	spectral atom), c (can be followed by two spectral atoms), or v (can
+	be followed by a frame or axis atom).
+
+Rationale:
+If we want to model UCDs as an RDF vocabulary, we will have to have some
+means to represent the syntax codes as defined in the current UCDList document
+https://ivoa.net/documents/UCD1+/.  A discussion leading up to something
+like this proposal is found in https://github.com/ivoa-std/Vocabularies/pull/31.
+
+Certain RDF formalisms would let us define the property's domain.  This
+would have the advantage that a suitable validator could ensure that we
+only assign allowed syntax codes; however, given that changes are
+infrequent and well-reviewed, the benefit of that seems too minor to
+justify the extra effort of extending Vocabularies in the VO.
